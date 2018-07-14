@@ -1,0 +1,104 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "AXA API Template",
+    "description": "AXA API Template",
+    "version": "1.0.0"
+  },
+  "schemes": [
+    "https"
+  ],
+  "basePath": "/api/v1",
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/template": {
+      "post": {
+        "summary": "<Summary>",
+        "description": "<Description>",
+        "operationId": "<operationId>",
+        "parameters": [
+        ],
+        "tags": [
+        ],
+        "responses": {
+          "200": {
+            "description": "<Description>",
+            "schema": {
+              "$ref": "#/definitions/TemplateResponse"
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "schema": {
+              "$ref": "#/definitions/400Response"
+            }
+          },
+          "401": {
+            "description": "Unauthorized access",
+            "schema": {
+              "$ref": "#/definitions/401Response"
+            }
+          },
+          "503": {
+            "description": "Service unavailable",
+            "schema": {
+              "$ref": "#/definitions/503Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "TemplateResponse": {
+      "type": "object",
+      "required": [
+      ],
+      "properties": {
+      }
+    },
+    "400Response": {
+      "type": "object",
+      "properties": {
+        "errors": {
+          "type": "array",
+          "items": {
+            "title": "Error",
+            "properties": {
+              "field": {
+                "type": "string",
+                "description": "Field with invalid value"
+              },
+              "message": {
+                "type": "string",
+                "description": "Description of validation error"
+              }
+            }
+          }
+        }
+      },
+      "xml": {
+        "name": "400Response"
+      }
+    },
+    "401Response": {
+      "type": "string",
+      "default": "Unauthorized access",
+      "xml": {
+        "name": "401Response"
+      }
+    },
+    "503Response": {
+      "type": "string",
+      "default": "Service unavailable",
+      "xml": {
+        "name": "503Response"
+      }
+    }
+  }
+}

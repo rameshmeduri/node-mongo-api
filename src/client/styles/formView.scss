@@ -1,0 +1,64 @@
+.form-view {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 4fr;
+  grid-auto-rows: max-content;
+  grid-row-gap: 2em;
+  grid-column-gap: 1em;
+
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: flex-start;
+
+    input {
+      padding: 0.5em;
+
+      &[type='text'] {
+        width: 100%;
+      }
+
+      &:read-only {
+        background-color: transparent;
+        padding: 0.2em 0.5em;
+        border: none;
+      }
+
+      &[type='checkbox'] {
+        padding: 0;
+        margin: 0 1em 0 0;
+      }
+    }
+
+    a {
+      align-self: flex-start;
+      height: 100%;
+    }
+
+    &.checkboxes p {
+      width: 100%;
+      display: flex;
+      align-content: flex-end;
+      align-items: center;
+    }
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: lightgray;
+    margin: 0;
+  }
+
+  .separator {
+    width: 100%;
+    background-color: #3032c1;
+    color: white;
+
+    &.separator-hr {
+      height: 2px;
+    }
+  }
+}

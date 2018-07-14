@@ -1,0 +1,50 @@
+.list-view {
+  table {
+  }
+
+  .table th {
+    text-transform: capitalize;
+  }
+
+  .right {
+    text-align: right;
+    justify-content: flex-end;
+  }
+
+  .table-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .api-routing-details {
+    width: 100%;
+    table-layout: fixed;
+
+    .vertical-divider {
+      border-right: 1px solid black;
+    }
+
+    tr {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      background-color: transparent !important;
+
+      > .divider {
+        width: 5%;
+      }
+
+      > td {
+        border: none;
+        width: 30%;
+
+        > ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+}

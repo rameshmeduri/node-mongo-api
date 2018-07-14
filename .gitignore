@@ -1,0 +1,11 @@
+node_modules
+dist
+docker-compose.override.yml
+npm-debug.log
+coverage
+.env
+.log
+.idea
+.vscode
+jsconfig.json
+.DS_Store

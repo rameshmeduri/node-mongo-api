@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  mongodb:
+    container_name: mongodb
+    image: mongo:latest
+    restart: always
+    ports:
+      - 27017:27017
+
+  api-access-manager:
+    container_name: api-access-manager
+    image: api-access-manager:latest
+    build:
+      context: ./
+      args:
+        - NPM_TOKEN=
+    restart: always
+    links:
+      - mongodb
+    depends_on:
+      - mongodb
+    ports:
+      - 8088:8088
+    env_file: .env
+    environment:
+      - PORT=8088
+      - MONGO_URL=mongodb://mongodb:27017
+    volumes:
+      - ./scripts:/opt/app-root/scripts
+    command: bash -c "/opt/app-root/scripts/wait-for-it.sh mongodb:27017 --timeout=60 --strict -- node index.js"
